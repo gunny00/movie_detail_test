@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		<!-- <setting name="mapUnderscoreToCamelCase" value="true"/> -->
+	</settings>
+	
+	<typeAliases>
+		<typeAlias alias="movieVO" type="com.project2.movie.vo.MovieVO"/>
+	</typeAliases>
+
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@localhost:1522:xe"/>
+        <property name="username" value="project2"/>
+        <property name="password" value="project22"/>
+      </dataSource>
+    </environment>
+  </environments>
+  
+  <mappers>
+    <mapper resource="com/project2/mybatis/mapper.xml" />
+  </mappers>
+  
+</configuration>
+
+
+
+
+
+
